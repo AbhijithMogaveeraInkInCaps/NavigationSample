@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/myFragment">
+
+    <fragment
+        android:id="@+id/myFragment"
+        android:name="com.inkincaps.navigationsample.MyFragment"
+        android:label="MyFragment" >
+        <action
+            android:id="@+id/action_myFragment_to_about"
+            app:destination="@id/about" />
+        <action
+            android:id="@+id/action_myFragment_to_userProfile2"
+            app:destination="@id/userProfile2" />
+    </fragment>
+    <fragment
+        android:id="@+id/about"
+        android:name="com.inkincaps.navigationsample.homescreen.About"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about">
+        <action
+            android:id="@+id/action_about_to_register2"
+            app:destination="@id/register2" />
+    </fragment>
+    <fragment
+        android:id="@+id/register2"
+        android:name="com.inkincaps.navigationsample.formscreen.Register"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/userProfile2"
+        android:name="com.inkincaps.navigationsample.listscreen.UserProfile"
+        android:label="fragment_user_profile"
+        tools:layout="@layout/fragment_user_profile" >
+        <argument
+            android:name="userName"
+            app:argType="string"/>
+    </fragment>
+</navigation>
